@@ -8,7 +8,6 @@ Utilice los archivos `tbl0.tsv`, `tbl1.tsv` y `tbl2.tsv`, para resolver las preg
 
 """
 import pandas as pd
-import numpy as np
 
 tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
 tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
@@ -16,41 +15,89 @@ tbl2 = pd.read_csv("tbl2.tsv", sep="\t")
 
 
 def pregunta_01():
-    solucion = tbl0.shape[0]
+    """
+    ¿Cuál es la cantidad de filas en la tabla `tbl0.tsv`?
 
-    return solucion
+    Rta/
+    40
+
+    """
+    return
 
 
 def pregunta_02():
-    solucion = tbl0.shape[1]
+    """
+    ¿Cuál es la cantidad de columnas en la tabla `tbl0.tsv`?
 
-    return solucion
+    Rta/
+    4
+
+    """
+    return
 
 
 def pregunta_03():
-    solucion = tbl0["_c1"].value_counts()
-    return solucion
+    """
+    ¿Cuál es la cantidad de registros por cada letra de la columna _c1 del archivo
+    `tbl0.tsv`?
+
+    Rta/
+    A     8
+    B     7
+    C     5
+    D     6
+    E    14
+    Name: _c1, dtype: int64
+
+    """
+    return
 
 
 def pregunta_04():
-    solucion = tbl0[["_c1", "_c2"]].groupby("_c1").mean()
-    return solucion
+    """
+    Calcule el promedio de _c2 por cada letra de la _c1 del archivo `tbl0.tsv`.
+
+    Rta/
+    A    4.625000
+    B    5.142857
+    C    5.400000
+    D    3.833333
+    E    4.785714
+    Name: _c2, dtype: float64
+    """
+    return
 
 
 def pregunta_05():
-    solucion = tbl0[["_c1", "_c2"]].groupby("_c1").max()
-    return solucion
+    """
+    Calcule el valor máximo de _c2 por cada letra en la columna _c1 del archivo
+    `tbl0.tsv`.
+
+    Rta/
+    _c1
+    A    9
+    B    9
+    C    9
+    D    7
+    E    9
+    Name: _c2, dtype: int64
+    """
+    return
 
 
 def pregunta_06():
-    solucion = list(np.sort(np.unique([i.upper() for i in tbl1["_c4"]])))
-    return solucion
+    """
+    Retorne una lista con los valores unicos de la columna _c4 de del archivo `tbl1.csv`
+    en mayusculas y ordenados alfabéticamente.
+
+    Rta/
+    ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+    """
+    return
 
 
 def pregunta_07():
-
-    solucion = tbl0[["_c1", "_c2"]].groupby("_c1").sum()
-
     """
     Calcule la suma de la _c2 por cada letra de la _c1 del archivo `tbl0.tsv`.
 
@@ -63,7 +110,7 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return solucion
+    return
 
 
 def pregunta_08():
