@@ -38,7 +38,7 @@ def pregunta_04():
 
 
 def pregunta_05():
-    solucion = tbl0[["_c1", "_c2"]].groupby("_c1").max()
+    solucion = tbl0[["_c1", "_c2"]].groupby("_c1")["_c2"].max()
     return solucion
 
 
