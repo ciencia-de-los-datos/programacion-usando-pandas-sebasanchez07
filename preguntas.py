@@ -28,12 +28,12 @@ def pregunta_02():
 
 
 def pregunta_03():
-    solucion = tbl0["_c1"].value_counts()
-    return solucion
+    
+    return tbl0.groupby("_c1")["_c1"].size()
 
 
 def pregunta_04():
-    solucion = tbl0[["_c1", "_c2"]].groupby("_c1").mean()
+    solucion = tbl0[["_c1", "_c2"]].groupby("_c1")["_c2"].mean()
     return solucion
 
 
